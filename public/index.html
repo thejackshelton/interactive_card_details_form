@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+    <link rel="stylesheet" href="./output.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <!-- card display -->
+      <section class="p-4 bg-no-repeat bg-mobile-hero">
+        <div class="flex flex-col">
+          <div class="relative z-10 flex justify-end top-5">
+            <div class="max-w-[286px]">
+              <img src="./images/bg-card-back.png" alt="back card" />
+            </div>
+            <!-- cvc -->
+            <div class="flex items-center justify-end">
+              <span
+                data-cvc="default"
+                class="absolute px-10 text-white tracking-body_xs_spacing text-body_xs"
+                >000</span
+              >
+            </div>
+          </div>
+          <!-- front card details -->
+          <div class="relative bottom-12 z-20 max-w-[285px] shadow-cardshadow">
+            <img src="./images/bg-card-front.png" alt="front card" />
+            <div class="absolute top-0 z-30 w-full p-4">
+              <div class="mb-8">
+                <img
+                  src="./images/card-logo.svg"
+                  alt="card logo"
+                  class="max-w-[54px]"
+                />
+              </div>
+              <span
+                data-cardinfo="default"
+                class="text-white tracking-body_lg_card_spacing letter text-heading_lg"
+                >0000 0000 0000 0000</span
+              >
+              <div
+                class="relative flex justify-between mt-5 text-white tracking-body_xs_spacing text-body_xs"
+              >
+                <span data-name="default">JANE APPLESEED</span>
+                <span data-expiration="default">00/00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- form section -->
+      <form class="relative flex flex-col p-6 top-[-3rem]">
+        <div class="flex items-start my-2">
+          <label for="card-name" class="tracking-body_md_spacing text-body_md"
+            >CARDHOLDER NAME</label
+          >
+        </div>
+        <input
+          required
+          data-name-input
+          type="text"
+          name="card-name"
+          placeholder="e.g. Jane Appleseed"
+          class="px-3 py-2 border rounded-lg border-lightGrayishViolet focus:input-border-gradient focus:border outline-0"
+        />
+
+        <label
+          for="card-number"
+          class="my-2 mt-5 tracking-body_md_spacing text-body_md"
+          >CARD NUMBER</label
+        >
+        <input
+          required
+          data-cardinfo-input
+          type="text"
+          name="card-number"
+          placeholder="e.g. 1234 5678 9123 0000"
+          class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0"
+        />
+
+        <div id="cardinfo-error" class="text-red text-[12px] mt-2"></div>
+
+        <div class="grid grid-cols-4">
+          <div class="flex flex-col col-span-1 mr-2">
+            <label
+              for="month"
+              class="my-2 mt-5 tracking-body_md_spacing text-body_md"
+              >EXP. DATE</label
+            >
+            <input
+              required
+              data-expiration-month
+              type="number"
+              name="month"
+              placeholder="MM"
+              class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0"
+            />
+          </div>
+
+          <div class="flex flex-col col-span-1">
+            <label
+              for="year"
+              class="my-2 mt-5 tracking-body_md_spacing text-body_md"
+              >(MM/YY)</label
+            >
+            <input
+              required
+              data-expiration-year
+              type="number"
+              name="year"
+              placeholder="YY"
+              class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0"
+            />
+          </div>
+
+          <div class="flex flex-col col-span-2 ml-[11px]">
+            <label
+              for="CVC"
+              class="my-2 mt-5 tracking-body_md_spacing text-body_md"
+              >CVC</label
+            >
+            <input
+              required
+              data-cvc-input
+              type="number"
+              name="CVC"
+              placeholder="e.g. 123"
+              class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0"
+            />
+          </div>
+        </div>
+        <button
+          class="w-full py-3 text-white rounded-lg my-7 bg-veryDarkViolet text-heading_lg"
+        >
+          Confirm
+        </button>
+      </form>
+
+      <!-- Completed state -->
+      <div class="hidden">
+        <div class="flex flex-col items-center p-6">
+          <img
+            src="./images/icon-complete.svg"
+            alt="form complete icon"
+            class="max-w-[80px]"
+          />
+          <h2
+            class="mt-[35px] tracking-heading_xl_spacing text-heading_xl text-veryDarkViolet"
+          >
+            THANK YOU!
+          </h2>
+          <p class="mt-4 text-darkGrayishViolet text-heading_lg">
+            We've added your card details
+          </p>
+          <button
+            class="w-full py-3 my-12 text-white rounded-lg bg-veryDarkViolet text-heading_lg"
+          >
+            Continue
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://twitter.com/thejackshelton">Jack Shelton</a>.
+      </div>
+    </footer>
+  </body>
+</html>

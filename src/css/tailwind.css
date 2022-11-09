@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .input-border-gradient {
+    border: double 1px transparent;
+    background-image: linear-gradient(white, white),
+      linear-gradient(to bottom, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+}
