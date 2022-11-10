@@ -79,7 +79,9 @@
       </section>
 
       <!-- form section -->
-      <form class="relative flex flex-col p-6 top-[-3rem]">
+      <form
+        class="relative flex flex-col p-6 top-[-3rem] transition-opacity duration-700 ease-in"
+      >
         <div class="flex items-start my-2">
           <label for="card-name" class="tracking-body_md_spacing text-body_md"
             >CARDHOLDER NAME</label
@@ -104,14 +106,16 @@
           aria-describedby="cardinfo-error"
           data-cardinfo-input
           type="text"
-          inputmode="numeric"
-          pattern="[0-9]*"
           name="card-number"
           placeholder="e.g. 1234 5678 9123 0000"
           class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0"
         />
 
-        <span id="cardinfo-error" class="text-red text-[12px] mt-2"></span>
+        <span
+          id="cardinfo-error"
+          aria-live="polite"
+          class="text-red text-[12px] mt-2"
+        ></span>
 
         <div class="grid grid-cols-4">
           <div class="flex flex-col col-span-1 mr-2">
@@ -133,6 +137,7 @@
             />
             <span
               id="expiration-error"
+              aria-live="polite"
               class="text-red text-[12px] mt-2 inline-size"
             ></span>
           </div>
@@ -172,18 +177,25 @@
               placeholder="e.g. 123"
               class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0"
             />
-            <span id="cvc-error" class="text-red text-[12px] mt-2"></span>
+            <span
+              id="cvc-error"
+              aria-live="polite"
+              class="text-red text-[12px] mt-2"
+            ></span>
           </div>
         </div>
-        <button
+        <input
+          type="submit"
+          value="Confirm"
           class="w-full py-3 text-white rounded-lg my-7 bg-veryDarkViolet text-heading_lg"
-        >
-          Confirm
-        </button>
+        />
       </form>
 
       <!-- Completed state -->
-      <div class="hidden">
+      <div
+        id="complete"
+        class="bottom-0 w-0 h-0 invisible transition-opacity duration-700 ease-in opacity-0 mt-[-3rem]"
+      >
         <div class="flex flex-col items-center p-6">
           <img
             src="./images/icon-complete.svg"
@@ -199,6 +211,7 @@
             We've added your card details
           </p>
           <button
+            id="restart"
             class="w-full py-3 my-12 text-white rounded-lg bg-veryDarkViolet text-heading_lg"
           >
             Continue

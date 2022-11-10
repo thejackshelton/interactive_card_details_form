@@ -1,5 +1,7 @@
 const body = document.querySelector("body");
+const completedDiv = document.querySelector("#complete");
 const form = document.querySelector("form");
+const restartButton = document.querySelector("#restart");
 
 const nameInput = document.querySelector("[data-name-input]");
 const name = document.querySelector("[data-name]");
@@ -159,4 +161,26 @@ cvcInput.addEventListener("keyup", (e) => {
     e.target.value = e.target.value.slice(0, -1);
     cvc.innerText = cvc.innerText.slice(0, -1);
   }
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  form.classList.remove("flex");
+  form.classList.add("invisible", "w-0", "h-0", "opacity-0");
+  completedDiv.classList.remove("invisible", "w-0", "h-0", "opacity-0");
+  completedDiv.classList.add("opacity-100");
+});
+
+restartButton.addEventListener("click", () => {
+  form.classList.add("flex");
+  form.classList.remove("invisible", "w-0", "h-0", "opacity-0");
+  form.classList.add("opacity-100");
+  completedDiv.classList.add("invisible", "w-0", "h-0", "opacity-0");
+
+  //Form Reset
+  form.reset();
+  name.innerText = "JANE APPLESEED";
+  cardinfo.innerText = "0000 0000 0000 0000";
+  expiration.innerText = "00/00";
+  cvc.innerText = "000";
 });
