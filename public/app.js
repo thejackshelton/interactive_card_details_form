@@ -48,7 +48,7 @@ cardinfoInput.addEventListener("keyup", (e) => {
     //Regex for adding a space between each 4 digits on the card
     let regexFilter = trimmedinfo.match(/.{1,4}/g);
 
-    //Only uses join if there are characters
+    //Uses join when there is more than white spaces
     if (trimmedinfo !== "") {
       cardinfo.innerText = regexFilter.join(" ");
     }

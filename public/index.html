@@ -121,6 +121,7 @@
             <input
               required
               data-expiration-month
+              aria-describedby="expiration-error"
               type="number"
               name="month"
               placeholder="MM"
@@ -141,7 +142,10 @@
             <input
               required
               data-expiration-year
-              type="number"
+              aria-describedby="expiration-error"
+              type="text"
+              inputmode="numeric"
+              pattern="[0-9]*"
               name="year"
               placeholder="YY"
               class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0"
