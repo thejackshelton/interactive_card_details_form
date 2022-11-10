@@ -174,7 +174,6 @@ form.addEventListener("submit", (e) => {
 restartButton.addEventListener("click", () => {
   form.classList.add("flex");
   form.classList.remove("invisible", "w-0", "h-0", "opacity-0");
-  form.classList.add("opacity-100");
   completedDiv.classList.add("invisible", "w-0", "h-0", "opacity-0");
 
   //Form Reset
