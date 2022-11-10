@@ -10,4 +10,8 @@
     background-origin: border-box;
     background-clip: padding-box, border-box;
   }
+
+  .inline-size {
+    inline-size: 150px;
+  }
 }

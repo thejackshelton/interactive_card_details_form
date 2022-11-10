@@ -544,6 +544,9 @@ video {
 .w-full {
   width: 100%;
 }
+.w-20 {
+  width: 5rem;
+}
 .max-w-\[286px\] {
   max-width: 286px;
 }
@@ -573,6 +576,9 @@ video {
 }
 .justify-between {
   justify-content: space-between;
+}
+.overflow-visible {
+  overflow: visible;
 }
 .rounded-lg {
   border-radius: 0.5rem;
@@ -667,9 +673,14 @@ video {
 .outline-0 {
   outline-width: 0px;
 }
+.inline-size {
+    inline-size: 150px;
+  }
+
 .focus\:border:focus {
   border-width: 1px;
 }
+
 .focus\:input-border-gradient:focus {
     border: double 1px transparent;
     background-image: linear-gradient(white, white),

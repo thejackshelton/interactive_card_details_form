@@ -13,9 +13,15 @@ cardinfoErrorMessage.innerText = "Wrong format, numbers only";
 const expirationMonth = document.querySelector("[data-expiration-month]");
 const expirationYear = document.querySelector("[data-expiration-year]");
 const expiration = document.querySelector("[data-expiration]");
+const expirationError = document.querySelector("#expiration-error");
+const expirationErrorMessage = document.createElement("p");
+expirationErrorMessage.innerText = "Can't be blank";
 
 const cvcInput = document.querySelector("[data-cvc-input]");
 const cvc = document.querySelector("[data-cvc]");
+const cvcError = document.querySelector("#cvc-error");
+const cvcErrorMessage = document.createElement("p");
+cvcErrorMessage.innerText = "Can't be blank";
 
 nameInput.addEventListener("keyup", (e) => {
   name.innerText = e.target.value.toUpperCase();
@@ -72,10 +78,15 @@ cardinfoInput.addEventListener("keyup", (e) => {
 expirationMonth.addEventListener("keyup", (e) => {
   keepYear = expiration.innerText.slice(-2);
   if (e.target.value === "") {
+    expirationError.classList.add("text-heading_xs");
+    expirationError.appendChild(expirationErrorMessage);
     console.log("can't be blank");
     expiration.innerText = "00/" + keepYear;
   } else {
     expiration.innerText = e.target.value + "/" + keepYear;
+    if (expirationError.contains(expirationErrorMessage)) {
+      expirationError.removeChild(expirationErrorMessage);
+    }
   }
 
   if (e.target.value.length >= 2) {
@@ -93,9 +104,14 @@ expirationYear.addEventListener("keyup", (e) => {
 
   if (e.target.value === "") {
     expiration.innerText = expiration.innerText.substring(0, 2) + "/00";
+    expirationError.classList.add("text-heading_xs");
+    expirationError.appendChild(expirationErrorMessage);
   } else {
     expiration.innerText =
       expiration.innerText.substring(0, 2) + "/" + e.target.value;
+    if (expirationError.contains(expirationErrorMessage)) {
+      expirationError.removeChild(expirationErrorMessage);
+    }
 
     if (e.target.value.length >= 2) {
       cvcInput.focus();
@@ -111,8 +127,13 @@ expirationYear.addEventListener("keyup", (e) => {
 cvcInput.addEventListener("keyup", (e) => {
   if (e.target.value === "") {
     cvc.innerText = "000";
+    cvcError.classList.add("text-heading_xs");
+    cvcError.appendChild(cvcErrorMessage);
   } else {
     cvc.innerText = e.target.value;
+    if (cvcError.contains(cvcErrorMessage)) {
+      cvcError.removeChild(cvcErrorMessage);
+    }
   }
 
   if (e.target.value.length > 3) {
