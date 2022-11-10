@@ -671,6 +671,9 @@ video {
   --tw-text-opacity: 1;
   color: hsl(279 6% 55% / var(--tw-text-opacity));
 }
+.caret-gradientOne {
+  caret-color: hsl(249, 99%, 64%);
+}
 .opacity-0 {
   opacity: 0;
 }
