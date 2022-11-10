@@ -14,4 +14,8 @@
   .inline-size {
     inline-size: 150px;
   }
+
+  .focus-visible {
+    outline-color: transparent;
+  }
 }
