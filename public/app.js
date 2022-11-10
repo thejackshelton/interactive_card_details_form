@@ -87,6 +87,12 @@ expirationMonth.addEventListener("keyup", (e) => {
     if (expirationError.contains(expirationErrorMessage)) {
       expirationError.removeChild(expirationErrorMessage);
     }
+
+    if (!e.target.value.match(/^[\d ]*$/)) {
+      e.target.value = e.target.value.slice(0, -1);
+      expiration.innerText =
+        expiration.innerText.substring(0, 2).slice(0, -1) + "/" + keepYear;
+    }
   }
 
   if (e.target.value.length >= 2) {
@@ -95,7 +101,7 @@ expirationMonth.addEventListener("keyup", (e) => {
 
   if (e.target.value.length > 2) {
     e.target.value = e.target.value.slice(0, -1);
-    expiration.innerText = expiration.innerText.slice(0, -1);
+    expiration.innerText = expiration.innerText.slice(0, 1);
   }
 });
 
@@ -111,6 +117,14 @@ expirationYear.addEventListener("keyup", (e) => {
       expiration.innerText.substring(0, 2) + "/" + e.target.value;
     if (expirationError.contains(expirationErrorMessage)) {
       expirationError.removeChild(expirationErrorMessage);
+    }
+
+    if (!e.target.value.match(/^[\d ]*$/)) {
+      e.target.value = e.target.value.slice(0, -1);
+      expiration.innerText =
+        expiration.innerText.substring(0, 2) +
+        "/" +
+        expiration.innerText.substring(0, e.target.value).slice(0, -1);
     }
 
     if (e.target.value.length >= 2) {
@@ -133,6 +147,11 @@ cvcInput.addEventListener("keyup", (e) => {
     cvc.innerText = e.target.value;
     if (cvcError.contains(cvcErrorMessage)) {
       cvcError.removeChild(cvcErrorMessage);
+    }
+
+    if (!e.target.value.match(/^[\d ]*$/)) {
+      e.target.value = e.target.value.slice(0, -1);
+      cvc.innerText = cvc.innerText.slice(0, -1);
     }
   }
 
