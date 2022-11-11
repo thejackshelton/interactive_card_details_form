@@ -35,194 +35,208 @@
   </head>
   <body>
     <main>
-      <!-- card display -->
-      <section class="p-4 bg-no-repeat bg-mobile-hero">
-        <div class="flex flex-col">
-          <div class="relative z-10 flex justify-end top-5">
-            <div class="max-w-[286px]">
-              <img src="./images/bg-card-back.png" alt="back card" />
-            </div>
-            <!-- cvc -->
-            <div class="flex items-center justify-end">
-              <span
-                data-cvc="default"
-                class="absolute px-10 text-white tracking-body_xs_spacing text-body_xs"
-                >000</span
-              >
-            </div>
-          </div>
-          <!-- front card details -->
-          <div class="relative bottom-12 z-20 max-w-[285px] shadow-cardshadow">
-            <img src="./images/bg-card-front.png" alt="front card" />
-            <div class="absolute top-0 z-30 w-full p-4">
-              <div class="mb-8">
-                <img
-                  src="./images/card-logo.svg"
-                  alt="card logo"
-                  class="max-w-[54px]"
-                />
-              </div>
-              <span
-                data-cardinfo="default"
-                class="text-white tracking-body_lg_card_spacing letter text-heading_lg"
-                >0000 0000 0000 0000</span
-              >
-              <div
-                class="relative flex justify-between mt-5 text-white tracking-body_xs_spacing text-body_xs"
-              >
-                <span data-name="default">JANE APPLESEED</span>
-                <span data-expiration="default">00/00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- form section -->
-      <form
-        class="relative flex flex-col p-6 top-[-3rem] transition-opacity duration-700 ease-in"
-      >
-        <div class="flex items-start my-2">
-          <label for="card-name" class="tracking-body_md_spacing text-body_md"
-            >CARDHOLDER NAME</label
-          >
-        </div>
-        <input
-          required
-          data-name-input
-          type="text"
-          name="card-name"
-          placeholder="e.g. Jane Appleseed"
-          class="px-3 py-2 border rounded-lg border-lightGrayishViolet focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
-        />
-
-        <label
-          for="card-number"
-          class="my-2 mt-5 tracking-body_md_spacing text-body_md"
-          >CARD NUMBER</label
+      <div class="desktop:flex">
+        <!-- card display -->
+        <section
+          class="p-4 bg-no-repeat bg-mobile-hero desktop:bg-desktop-hero desktop:h-[900px] desktop:w-[483px]"
         >
-        <input
-          required
-          aria-describedby="cardinfo-error"
-          data-cardinfo-input
-          type="text"
-          name="card-number"
-          placeholder="e.g. 1234 5678 9123 0000"
-          class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
-        />
-
-        <span
-          id="cardinfo-error"
-          aria-live="polite"
-          class="text-red text-[12px] mt-2"
-        ></span>
-
-        <div class="grid grid-cols-4">
-          <div class="flex flex-col col-span-1 mr-2">
-            <label
-              for="month"
-              class="my-2 mt-5 tracking-body_md_spacing text-body_md"
-              >EXP. DATE</label
+          <div class="flex flex-col">
+            <div class="relative z-10 flex justify-end top-5">
+              <div class="max-w-[286px] desktop:max-w-[447px]">
+                <img src="./images/bg-card-back.png" alt="back of the card" />
+              </div>
+              <!-- cvc -->
+              <div class="flex items-center justify-end">
+                <span
+                  data-cvc="default"
+                  class="absolute px-10 text-white tracking-body_xs_spacing text-body_xs"
+                  >000</span
+                >
+              </div>
+            </div>
+            <!-- front card details -->
+            <div
+              class="relative bottom-12 z-20 max-w-[285px] desktop:max-w-[447px] shadow-cardshadow"
             >
-            <input
-              required
-              data-expiration-month
-              aria-describedby="expiration-error"
-              type="text"
-              inputmode="numeric"
-              pattern="[0-9]*"
-              name="month"
-              placeholder="MM"
-              class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
-            />
-            <span
-              id="expiration-error"
-              aria-live="polite"
-              class="text-red text-[12px] mt-2 inline-size"
-            ></span>
+              <img src="./images/bg-card-front.png" alt="front card" />
+              <div class="absolute top-0 z-30 w-full p-4">
+                <div class="mb-8">
+                  <img
+                    src="./images/card-logo.svg"
+                    alt="card logo"
+                    class="max-w-[54px]"
+                  />
+                </div>
+                <span
+                  data-cardinfo="default"
+                  class="text-white tracking-body_lg_card_spacing letter text-heading_lg"
+                  >0000 0000 0000 0000</span
+                >
+                <div
+                  class="relative flex justify-between mt-5 text-white tracking-body_xs_spacing text-body_xs"
+                >
+                  <span data-name="default">JANE APPLESEED</span>
+                  <span data-expiration="default">00/00</span>
+                </div>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <div class="flex flex-col col-span-1">
-            <label
-              for="year"
-              class="my-2 mt-5 tracking-body_md_spacing text-body_md"
-              >(MM/YY)</label
-            >
-            <input
-              required
-              data-expiration-year
-              aria-describedby="expiration-error"
-              type="text"
-              inputmode="numeric"
-              pattern="[0-9]*"
-              name="year"
-              placeholder="YY"
-              class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
-            />
-          </div>
-
-          <div class="flex flex-col col-span-2 ml-[11px]">
-            <label
-              for="CVC"
-              class="my-2 mt-5 tracking-body_md_spacing text-body_md"
-              >CVC</label
-            >
-            <input
-              required
-              data-cvc-input
-              type="text"
-              inputmode="numeric"
-              pattern="[0-9]*"
-              name="CVC"
-              placeholder="e.g. 123"
-              class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
-            />
-            <span
-              id="cvc-error"
-              aria-live="polite"
-              class="text-red text-[12px] mt-2"
-            ></span>
-          </div>
-        </div>
-        <input
-          type="submit"
-          value="Confirm"
-          class="w-full py-3 text-white rounded-lg my-7 bg-veryDarkViolet text-heading_lg"
-        />
-      </form>
-
-      <!-- Completed state -->
-      <div
-        id="complete"
-        class="w-0 h-0 invisible transition-opacity duration-700 ease-in opacity-0 mt-[-5rem] overflow-hidden"
-        aria-live="polite"
-      >
-        <div class="flex flex-col items-center p-6">
-          <img
-            src="./images/icon-complete.svg"
-            alt="form complete icon"
-            class="max-w-[80px]"
-          />
-          <h2
-            class="mt-[35px] tracking-heading_xl_spacing text-heading_xl text-veryDarkViolet"
+        <!-- form section -->
+        <div class="desktop:block desktop:w-full">
+          <div
+            class="desktop:flex desktop:h-full desktop:justify-center desktop:items-center"
           >
-            THANK YOU!
-          </h2>
-          <p class="mt-4 text-darkGrayishViolet text-heading_lg">
-            We've added your card details
-          </p>
-          <button
-            id="restart"
-            class="w-full py-3 my-12 text-white rounded-lg bg-veryDarkViolet text-heading_lg"
-          >
-            Continue
-          </button>
+            <form
+              class="relative flex flex-col p-6 top-[-3rem] transition-opacity duration-700 ease-in z-10 desktop:top-0 desktop:max-w-[381px] desktop:p-0"
+            >
+              <div class="flex items-start my-2">
+                <label
+                  for="card-name"
+                  class="tracking-body_md_spacing text-body_md"
+                  >CARDHOLDER NAME</label
+                >
+              </div>
+              <input
+                required
+                data-name-input
+                type="text"
+                name="card-name"
+                placeholder="e.g. Jane Appleseed"
+                class="px-3 py-2 border rounded-lg border-lightGrayishViolet focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
+              />
+
+              <label
+                for="card-number"
+                class="my-2 mt-5 tracking-body_md_spacing text-body_md"
+                >CARD NUMBER</label
+              >
+              <input
+                required
+                aria-describedby="cardinfo-error"
+                data-cardinfo-input
+                type="text"
+                name="card-number"
+                placeholder="e.g. 1234 5678 9123 0000"
+                class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
+              />
+
+              <span
+                id="cardinfo-error"
+                aria-live="polite"
+                class="text-red text-[12px] mt-2"
+              ></span>
+
+              <div class="grid grid-cols-4">
+                <div class="flex flex-col col-span-1 mr-2">
+                  <label
+                    for="month"
+                    class="my-2 mt-5 tracking-body_md_spacing text-body_md"
+                    >EXP. DATE</label
+                  >
+                  <input
+                    required
+                    data-expiration-month
+                    aria-describedby="expiration-error"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    name="month"
+                    placeholder="MM"
+                    class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
+                  />
+                  <span
+                    id="expiration-error"
+                    aria-live="polite"
+                    class="text-red text-[12px] mt-2 inline-size"
+                  ></span>
+                </div>
+
+                <div class="flex flex-col col-span-1">
+                  <label
+                    for="year"
+                    class="my-2 mt-5 tracking-body_md_spacing text-body_md"
+                    >(MM/YY)</label
+                  >
+                  <input
+                    required
+                    data-expiration-year
+                    aria-describedby="expiration-error"
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    name="year"
+                    placeholder="YY"
+                    class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
+                  />
+                </div>
+
+                <div class="flex flex-col col-span-2 ml-[11px]">
+                  <label
+                    for="CVC"
+                    class="my-2 mt-5 tracking-body_md_spacing text-body_md"
+                    >CVC</label
+                  >
+                  <input
+                    required
+                    aria-describedby="cvc-error"
+                    data-cvc-input
+                    type="text"
+                    inputmode="numeric"
+                    pattern="[0-9]*"
+                    name="CVC"
+                    placeholder="e.g. 123"
+                    class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
+                  />
+                  <span
+                    id="cvc-error"
+                    aria-live="polite"
+                    class="text-red text-[12px] mt-2"
+                  ></span>
+                </div>
+              </div>
+              <input
+                type="submit"
+                value="Confirm"
+                class="w-full py-3 text-white rounded-lg my-7 bg-veryDarkViolet text-heading_lg"
+              />
+            </form>
+            <!-- Completed state -->
+            <div
+              id="complete"
+              class="w-0 h-0 invisible transition-opacity duration-700 ease-in opacity-0 mt-[-5rem] overflow-hidden z-10 desktop:mt-0 desktop:max-w-[386px]"
+              aria-live="polite"
+            >
+              <div class="flex flex-col items-center p-6">
+                <img
+                  src="./images/icon-complete.svg"
+                  alt="form complete icon"
+                  class="max-w-[80px]"
+                />
+                <h2
+                  class="mt-[35px] tracking-heading_xl_spacing text-heading_xl text-veryDarkViolet"
+                >
+                  THANK YOU!
+                </h2>
+                <p class="mt-4 text-darkGrayishViolet text-heading_lg">
+                  We've added your card details
+                </p>
+                <button
+                  id="restart"
+                  class="w-full py-3 my-12 text-white rounded-lg bg-veryDarkViolet text-heading_lg"
+                >
+                  Continue
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
 
     <footer>
-      <div class="attribution">
+      <div class="relative z-20 attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
           >Frontend Mentor</a

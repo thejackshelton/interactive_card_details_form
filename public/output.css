@@ -469,9 +469,6 @@ video {
 .invisible {
   visibility: hidden;
 }
-.fixed {
-  position: fixed;
-}
 .absolute {
   position: absolute;
 }
@@ -489,9 +486,6 @@ video {
 }
 .top-\[-3rem\] {
   top: -3rem;
-}
-.bottom-0 {
-  bottom: 0px;
 }
 .z-10 {
   z-index: 10;
@@ -535,8 +529,8 @@ video {
 .ml-\[11px\] {
   margin-left: 11px;
 }
-.mt-\[-3rem\] {
-  margin-top: -3rem;
+.mt-\[-5rem\] {
+  margin-top: -5rem;
 }
 .mt-\[35px\] {
   margin-top: 35px;
@@ -544,20 +538,11 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
-.mt-\[-10rem\] {
-  margin-top: -10rem;
-}
-.mt-\[-5rem\] {
-  margin-top: -5rem;
-}
 .flex {
   display: flex;
 }
 .grid {
   display: grid;
-}
-.hidden {
-  display: none;
 }
 .h-0 {
   height: 0px;
@@ -724,10 +709,6 @@ video {
   outline-offset: 2px;
 }
 
-.focus\:outline-0:focus {
-  outline-width: 0px;
-}
-
 .focus\:input-border-gradient:focus {
     border: double 1px transparent;
     background-image: linear-gradient(white, white),
@@ -735,3 +716,138 @@ video {
     background-origin: border-box;
     background-clip: padding-box, border-box;
   }
+
+@media (min-width: 1440px) {
+
+  .desktop\:fixed {
+    position: fixed;
+  }
+
+  .desktop\:relative {
+    position: relative;
+  }
+
+  .desktop\:top-0 {
+    top: 0px;
+  }
+
+  .desktop\:mt-0 {
+    margin-top: 0px;
+  }
+
+  .desktop\:block {
+    display: block;
+  }
+
+  .desktop\:flex {
+    display: flex;
+  }
+
+  .desktop\:h-full {
+    height: 100%;
+  }
+
+  .desktop\:h-\[900px\] {
+    height: 900px;
+  }
+
+  .desktop\:h-\[2000px\] {
+    height: 2000px;
+  }
+
+  .desktop\:h-20 {
+    height: 5rem;
+  }
+
+  .desktop\:h-\[100vh\] {
+    height: 100vh;
+  }
+
+  .desktop\:max-h-\[900px\] {
+    max-height: 900px;
+  }
+
+  .desktop\:max-h-\[245px\] {
+    max-height: 245px;
+  }
+
+  .desktop\:max-h-full {
+    max-height: 100%;
+  }
+
+  .desktop\:w-\[483px\] {
+    width: 483px;
+  }
+
+  .desktop\:w-full {
+    width: 100%;
+  }
+
+  .desktop\:w-\[381px\] {
+    width: 381px;
+  }
+
+  .desktop\:max-w-\[483px\] {
+    max-width: 483px;
+  }
+
+  .desktop\:max-w-full {
+    max-width: 100%;
+  }
+
+  .desktop\:max-w-\[447px\] {
+    max-width: 447px;
+  }
+
+  .desktop\:max-w-\[381px\] {
+    max-width: 381px;
+  }
+
+  .desktop\:max-w-\[500px\] {
+    max-width: 500px;
+  }
+
+  .desktop\:max-w-\[386px\] {
+    max-width: 386px;
+  }
+
+  .desktop\:flex-col {
+    flex-direction: column;
+  }
+
+  .desktop\:items-center {
+    align-items: center;
+  }
+
+  .desktop\:justify-end {
+    justify-content: flex-end;
+  }
+
+  .desktop\:justify-center {
+    justify-content: center;
+  }
+
+  .desktop\:overflow-visible {
+    overflow: visible;
+  }
+
+  .desktop\:bg-desktop-hero {
+    background-image: url('./images/bg-main-desktop.png');
+  }
+
+  .desktop\:p-20 {
+    padding: 5rem;
+  }
+
+  .desktop\:p-60 {
+    padding: 15rem;
+  }
+
+  .desktop\:p-0 {
+    padding: 0px;
+  }
+
+  .desktop\:align-middle {
+    vertical-align: middle;
+  }
+}

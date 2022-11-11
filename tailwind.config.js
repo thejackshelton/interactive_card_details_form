@@ -29,6 +29,7 @@ module.exports = {
       },
       backgroundImage: {
         "mobile-hero": "url('./images/bg-main-mobile.png')",
+        "desktop-hero": "url('./images/bg-main-desktop.png')",
       },
       boxShadow: {
         cardshadow: "0px 39px 60px rgba(0, 0, 0, 0.142481)",
