@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot](https://imgur.com/vOaieyN)
+![https://imgur.com/vOaieyN]()
 
 ### Links
 
@@ -167,7 +167,7 @@ I enjoy Tailwind, but I think I will be doing the next couple of challenges usin
 
 Big special thanks to Grace Snow for helping me with the aria-live and aria-describedby attributes.
 
-Thanks to Julio Cinquina for informating me that you can use the character e in an input with type="number", this is because it's a logarithm/irrational number.
+Thanks to Julio Cinquina for informing me that you can use the character e in an input with type="number", this is because it's a logarithm/irrational number.
 
 Julio also recommended this article:
 https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/
