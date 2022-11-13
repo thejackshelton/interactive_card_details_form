@@ -16,9 +16,9 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
+
+A card form that updates a live preview by using Tailwind CSS & Vanilla JS.
 
 ### The challenge
 
@@ -35,18 +35,10 @@ Users should be able to:
 
 ![Screenshot](https://imgur.com/vOaieyN)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/thejackshelton/interactive_card_details_form)
+- Live Site URL: [Add live site URL here](https://interactive-card-details-form-eight.vercel.app/)
 
 ## My process
 
@@ -57,61 +49,132 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- [Tailwind CSS] (https://tailwindcss.com/) - CSS Framework
+- Vanilla JavaScript
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+In my HTML, I learned how to use aria-describedby and aria-live in order to make my forms accessible without nesting them in a label tag. I found this important because depending on the situation, nesting everything in a label tag may not be the best option.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<label for="card-number" class="my-2 mt-5 tracking-body_md_spacing text-body_md"
+  >CARD NUMBER</label
+>
+<input
+  required
+  aria-describedby="cardinfo-error"
+  data-cardinfo-input
+  type="text"
+  name="card-number"
+  placeholder="e.g. 1234 5678 9123 0000"
+  class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne"
+/>
+
+<span
+  id="cardinfo-error"
+  aria-live="polite"
+  class="text-red text-[12px] mt-2"
+></span>
 ```
 
+I created a couple of my own tailwind utilities throughout this challenge. The input border gradient class is a utility I created in order to add the border gradient effect.
+
 ```css
-.proud-of-this-css {
-  color: papayawhip;
+@layer utilities {
+  .input-border-gradient {
+    border: double 1px transparent;
+    background-image: linear-gradient(white, white), linear-gradient(to bottom, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  .inline-size {
+    inline-size: 150px;
+  }
+
+  .focus-visible {
+    outline-color: transparent;
+  }
 }
 ```
 
+I used regex several times throughout this project. Below is the input listener and custom logic for the card number input value.
+
+Whenever the input is empty, it defaults to the standard 0's. I used the event variable in order to capture the input value.
+
+I didn't like that someone could put in numbers any way that they wanted on the card without a space in between. To solve this, I made a variable called trimmedinfo that removes any whitespace in the input value. This then runs through a regex filter that will add a space every four characters to the trimmed string. This allows the user to add as many spaces as they like, and it wouldn't affect what appears on the card.
+
+I used the slice method that deleted the last character a user types in both the input and inner text of the card. This was to prevent the card from getting more digits than needed, along with the input as well.
+
+There is much more JS than this throughout the file, but this is something I thought I'd mention.
+
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+cardinfoInput.addEventListener("keyup", (e) => {
+  if (e.target.value === "") {
+    cardinfo.innerText = "0000 0000 0000 0000";
+  } else {
+    //Removes any white spaces
+    let trimmedinfo = e.target.value.replace(/\s+/g, "");
+
+    //Regex for adding a space between each 4 digits on the card
+    let regexFilter = trimmedinfo.match(/.{1,4}/g);
+
+    //Uses join when there is more than white spaces
+    if (trimmedinfo !== "") {
+      cardinfo.innerText = regexFilter.join(" ");
+    }
+
+    //Checks if the current value contains anything other than numbers
+    if (!e.target.value.match(/^[\d ]*$/)) {
+      console.log("sorry, but you haven't typed a number");
+      cardinfoError.classList.add("text-heading_xs");
+      cardinfoError.appendChild(cardinfoErrorMessage);
+    } else {
+      if (cardinfoError.contains(cardinfoErrorMessage)) {
+        cardinfoError.removeChild(cardinfoErrorMessage);
+      }
+    }
+
+    //Prevents any trimmed number length over 16 (w/removed white space)
+    let trimmedText = cardinfo.innerText.replace(/\s+/g, "");
+    if (trimmedText.length > 16) {
+      console.log("Sorry, but that input is too long.");
+      e.target.value = e.target.value.slice(0, -1);
+      cardinfo.innerText = cardinfo.innerText.slice(0, -1);
+      expirationMonth.focus();
+    }
+  }
+});
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+I want to continue utilizing accessibility as a standard best practice in all of my projects.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I enjoy Tailwind, but I think I will be doing the next couple of challenges using SASS.
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Figma](https://figma.com) - Due to being a pro member, I was able to access the design files. This allowed me to see the exact sizes and spacing that was used in the design.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Stack Overflow](https://stackoverflow.com/) - Like every other developer, I use stack overflow. Particularly to find the regex for the condition checks. Thanks to Jerry T and Tom M for helping me out with that! All credit goes to you guys.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Twitter - [@thejackshelton](https://www.twitter.com/thejackshelton)
 
 ## Acknowledgments
 
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
+Big special thanks to Grace Snow for helping me with the aria-live and aria-describedby attributes.
 
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+Thanks to Julio Cinquina for informating me that you can use the character e in an input with type="number", this is because it's a logarithm/irrational number.
+
+Julio also recommended this article:
+https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/
+
+To solve a couple of my problems for mobile, the article covers how you can set the pattern of the input for mobile users. I found this very helpful on a couple of my inputs. For the card numbers input, it remained a text input to stay faithful to the challenge, as there's an error message for characters that aren't numbers.
+
+```html
+<input type="number" /> to
+<input type="text" inputmode="numeric" pattern="[0-9]*" />
+```
