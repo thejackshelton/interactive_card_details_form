@@ -589,6 +589,9 @@ video {
 .rounded-lg {
   border-radius: 0.5rem;
 }
+.rounded-xl {
+  border-radius: 0.75rem;
+}
 .border {
   border-width: 1px;
 }
@@ -719,16 +722,36 @@ video {
 
 @media (min-width: 1440px) {
 
-  .desktop\:fixed {
-    position: fixed;
-  }
-
   .desktop\:relative {
     position: relative;
   }
 
   .desktop\:top-0 {
     top: 0px;
+  }
+
+  .desktop\:left-\[15rem\] {
+    left: 15rem;
+  }
+
+  .desktop\:bottom-0 {
+    bottom: 0px;
+  }
+
+  .desktop\:left-\[8\.5rem\] {
+    left: 8.5rem;
+  }
+
+  .desktop\:mb-\[37px\] {
+    margin-bottom: 37px;
+  }
+
+  .desktop\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
+  .desktop\:ml-\[10rem\] {
+    margin-left: 10rem;
   }
 
   .desktop\:mt-0 {
@@ -743,36 +766,12 @@ video {
     display: flex;
   }
 
-  .desktop\:h-full {
-    height: 100%;
-  }
-
   .desktop\:h-\[900px\] {
     height: 900px;
   }
 
-  .desktop\:h-\[2000px\] {
-    height: 2000px;
-  }
-
-  .desktop\:h-20 {
-    height: 5rem;
-  }
-
-  .desktop\:h-\[100vh\] {
-    height: 100vh;
-  }
-
-  .desktop\:max-h-\[900px\] {
-    max-height: 900px;
-  }
-
-  .desktop\:max-h-\[245px\] {
-    max-height: 245px;
-  }
-
-  .desktop\:max-h-full {
-    max-height: 100%;
+  .desktop\:h-full {
+    height: 100%;
   }
 
   .desktop\:w-\[483px\] {
@@ -787,67 +786,78 @@ video {
     width: 381px;
   }
 
-  .desktop\:max-w-\[483px\] {
-    max-width: 483px;
-  }
-
-  .desktop\:max-w-full {
-    max-width: 100%;
-  }
-
   .desktop\:max-w-\[447px\] {
     max-width: 447px;
+  }
+
+  .desktop\:max-w-\[84px\] {
+    max-width: 84px;
   }
 
   .desktop\:max-w-\[381px\] {
     max-width: 381px;
   }
 
-  .desktop\:max-w-\[500px\] {
-    max-width: 500px;
+  .desktop\:max-w-full {
+    max-width: 100%;
   }
 
-  .desktop\:max-w-\[386px\] {
-    max-width: 386px;
-  }
-
-  .desktop\:flex-col {
-    flex-direction: column;
+  .desktop\:flex-col-reverse {
+    flex-direction: column-reverse;
   }
 
   .desktop\:items-center {
     align-items: center;
   }
 
-  .desktop\:justify-end {
-    justify-content: flex-end;
+  .desktop\:justify-start {
+    justify-content: flex-start;
   }
 
   .desktop\:justify-center {
     justify-content: center;
   }
 
-  .desktop\:overflow-visible {
-    overflow: visible;
+  .desktop\:rounded-xl {
+    border-radius: 0.75rem;
   }
 
   .desktop\:bg-desktop-hero {
     background-image: url('./images/bg-main-desktop.png');
   }
 
-  .desktop\:p-20 {
-    padding: 5rem;
-  }
-
-  .desktop\:p-60 {
-    padding: 15rem;
+  .desktop\:p-8 {
+    padding: 2rem;
   }
 
   .desktop\:p-0 {
     padding: 0px;
   }
 
-  .desktop\:align-middle {
-    vertical-align: middle;
+  .desktop\:px-12 {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  .desktop\:text-body_lg {
+    font-size: 14px;
+  }
+
+  .desktop\:text-heading_xl {
+    font-size: 28px;
+  }
+
+  .desktop\:tracking-body_lg_spacing {
+    letter-spacing: 2px;
+  }
+
+  .desktop\:tracking-heading_xl_spacing {
+    letter-spacing: 3.42px;
+  }
+
+  .desktop\:shadow-cardshadow {
+    --tw-shadow: 0px 39px 60px rgba(0, 0, 0, 0.142481);
+    --tw-shadow-colored: 0px 39px 60px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 }

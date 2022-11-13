@@ -38,42 +38,50 @@
       <div class="desktop:flex">
         <!-- card display -->
         <section
-          class="p-4 bg-no-repeat bg-mobile-hero desktop:bg-desktop-hero desktop:h-[900px] desktop:w-[483px]"
+          class="p-4 bg-no-repeat bg-mobile-hero desktop:bg-desktop-hero desktop:h-[900px] desktop:relative desktop:w-[483px] desktop:flex"
         >
-          <div class="flex flex-col">
-            <div class="relative z-10 flex justify-end top-5">
-              <div class="max-w-[286px] desktop:max-w-[447px]">
+          <div
+            class="flex flex-col desktop:w-[483px] desktop:flex-col-reverse desktop:justify-center"
+          >
+            <div
+              class="relative z-10 flex justify-end top-5 desktop:top-0 desktop:justify-start desktop:left-[15rem]"
+            >
+              <div
+                class="max-w-[286px] desktop:max-w-[447px] desktop:shadow-cardshadow desktop:rounded-xl"
+              >
                 <img src="./images/bg-card-back.png" alt="back of the card" />
               </div>
               <!-- cvc -->
               <div class="flex items-center justify-end">
                 <span
                   data-cvc="default"
-                  class="absolute px-10 text-white tracking-body_xs_spacing text-body_xs"
+                  class="absolute px-10 text-white tracking-body_xs_spacing text-body_xs desktop:px-12 desktop:text-body_lg desktop:tracking-body_lg_spacing"
                   >000</span
                 >
               </div>
             </div>
             <!-- front card details -->
             <div
-              class="relative bottom-12 z-20 max-w-[285px] desktop:max-w-[447px] shadow-cardshadow"
+              class="relative bottom-12 z-20 max-w-[285px] desktop:max-w-[447px] shadow-cardshadow rounded-xl desktop:bottom-0 desktop:flex desktop:left-[8.5rem] desktop:mb-[37px]"
             >
               <img src="./images/bg-card-front.png" alt="front card" />
-              <div class="absolute top-0 z-30 w-full p-4">
+              <div class="absolute top-0 z-30 w-full p-4 desktop:p-8">
                 <div class="mb-8">
                   <img
                     src="./images/card-logo.svg"
                     alt="card logo"
-                    class="max-w-[54px]"
+                    class="max-w-[54px] desktop:max-w-[84px]"
                   />
                 </div>
-                <span
-                  data-cardinfo="default"
-                  class="text-white tracking-body_lg_card_spacing letter text-heading_lg"
-                  >0000 0000 0000 0000</span
-                >
+                <div class="desktop:mt-10">
+                  <span
+                    data-cardinfo="default"
+                    class="text-white tracking-body_lg_card_spacing letter text-heading_lg desktop:text-heading_xl desktop:tracking-heading_xl_spacing"
+                    >0000 0000 0000 0000</span
+                  >
+                </div>
                 <div
-                  class="relative flex justify-between mt-5 text-white tracking-body_xs_spacing text-body_xs"
+                  class="relative flex justify-between mt-5 text-white tracking-body_xs_spacing text-body_xs desktop:tracking-body_lg_spacing desktop:text-body_lg desktop:mt-10"
                 >
                   <span data-name="default">JANE APPLESEED</span>
                   <span data-expiration="default">00/00</span>
@@ -86,7 +94,7 @@
         <!-- form section -->
         <div class="desktop:block desktop:w-full">
           <div
-            class="desktop:flex desktop:h-full desktop:justify-center desktop:items-center"
+            class="desktop:flex desktop:h-full desktop:justify-center desktop:items-center desktop:ml-[10rem]"
           >
             <form
               class="relative flex flex-col p-6 top-[-3rem] transition-opacity duration-700 ease-in z-10 desktop:top-0 desktop:max-w-[381px] desktop:p-0"
@@ -205,10 +213,10 @@
             <!-- Completed state -->
             <div
               id="complete"
-              class="w-0 h-0 invisible transition-opacity duration-700 ease-in opacity-0 mt-[-5rem] overflow-hidden z-10 desktop:mt-0 desktop:max-w-[386px]"
+              class="w-0 h-0 invisible transition-opacity duration-700 ease-in opacity-0 mt-[-5rem] overflow-hidden z-10 desktop:mt-0 desktop:max-w-full desktop:relative"
               aria-live="polite"
             >
-              <div class="flex flex-col items-center p-6">
+              <div class="flex flex-col items-center p-6 desktop:w-[381px]">
                 <img
                   src="./images/icon-complete.svg"
                   alt="form complete icon"
