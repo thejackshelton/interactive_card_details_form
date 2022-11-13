@@ -703,6 +703,16 @@ video {
     inline-size: 150px;
   }
 
+.placeholder\:text-lightGrayishViolet::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: hsl(270 3% 87% / var(--tw-text-opacity));
+}
+
+.placeholder\:text-lightGrayishViolet::placeholder {
+  --tw-text-opacity: 1;
+  color: hsl(270 3% 87% / var(--tw-text-opacity));
+}
+
 .focus\:border:focus {
   border-width: 1px;
 }
