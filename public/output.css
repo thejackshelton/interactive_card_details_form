@@ -713,6 +713,58 @@ video {
   color: hsl(270 3% 87% / var(--tw-text-opacity));
 }
 
+.placeholder\:text-veryDarkViolet::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: hsl(278 68% 11% / var(--tw-text-opacity));
+}
+
+.placeholder\:text-veryDarkViolet::placeholder {
+  --tw-text-opacity: 1;
+  color: hsl(278 68% 11% / var(--tw-text-opacity));
+}
+
+.placeholder\:text-darkGrayishViolet::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: hsl(279 6% 55% / var(--tw-text-opacity));
+}
+
+.placeholder\:text-darkGrayishViolet::placeholder {
+  --tw-text-opacity: 1;
+  color: hsl(279 6% 55% / var(--tw-text-opacity));
+}
+
+.placeholder\:text-darkGrayishViolet\/40::-moz-placeholder {
+  color: hsl(279 6% 55% / 0.4);
+}
+
+.placeholder\:text-darkGrayishViolet\/40::placeholder {
+  color: hsl(279 6% 55% / 0.4);
+}
+
+.placeholder\:text-veryDarkViolet\/40::-moz-placeholder {
+  color: hsl(278 68% 11% / 0.4);
+}
+
+.placeholder\:text-veryDarkViolet\/40::placeholder {
+  color: hsl(278 68% 11% / 0.4);
+}
+
+.placeholder\:text-veryDarkViolet\/50::-moz-placeholder {
+  color: hsl(278 68% 11% / 0.5);
+}
+
+.placeholder\:text-veryDarkViolet\/50::placeholder {
+  color: hsl(278 68% 11% / 0.5);
+}
+
+.placeholder\:text-veryDarkViolet\/30::-moz-placeholder {
+  color: hsl(278 68% 11% / 0.3);
+}
+
+.placeholder\:text-veryDarkViolet\/30::placeholder {
+  color: hsl(278 68% 11% / 0.3);
+}
+
 .focus\:border:focus {
   border-width: 1px;
 }
