@@ -53,11 +53,12 @@
               </div>
               <!-- cvc -->
               <div class="flex items-center justify-end">
-                <span
+                <h2
                   data-cvc="default"
                   class="absolute px-10 text-white tracking-body_xs_spacing text-body_xs desktop:px-14 desktop:text-body_lg desktop:tracking-body_lg_spacing desktop:mb-1"
-                  >000</span
                 >
+                  000
+                </h2>
               </div>
             </div>
             <!-- front card details -->
@@ -74,17 +75,18 @@
                   />
                 </div>
                 <div class="desktop:mt-12">
-                  <span
+                  <h1
                     data-cardinfo="default"
                     class="text-white tracking-body_lg_card_spacing letter text-heading_lg desktop:text-heading_xl desktop:tracking-heading_xl_spacing"
-                    >0000 0000 0000 0000</span
                   >
+                    0000 0000 0000 0000
+                  </h1>
                 </div>
                 <div
                   class="relative flex justify-between mt-5 text-white tracking-body_xs_spacing text-body_xs desktop:tracking-body_lg_spacing desktop:text-body_lg desktop:mt-8"
                 >
-                  <span data-name="default">JANE APPLESEED</span>
-                  <span data-expiration="default">00/00</span>
+                  <h2 data-name="default">JANE APPLESEED</h2>
+                  <h2 data-expiration="default">00/00</h2>
                 </div>
               </div>
             </div>
@@ -111,6 +113,7 @@
                 data-name-input
                 type="text"
                 name="card-name"
+                id="card-name"
                 placeholder="e.g. Jane Appleseed"
                 class="px-3 py-2 border rounded-lg border-lightGrayishViolet focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30"
               />
@@ -126,6 +129,7 @@
                 data-cardinfo-input
                 type="text"
                 name="card-number"
+                id="card-number"
                 placeholder="e.g. 1234 5678 9123 0000"
                 class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30"
               />
@@ -151,6 +155,7 @@
                     inputmode="numeric"
                     pattern="[0-9]*"
                     name="month"
+                    id="month"
                     placeholder="MM"
                     class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30"
                   />
@@ -175,6 +180,7 @@
                     inputmode="numeric"
                     pattern="[0-9]*"
                     name="year"
+                    id="year"
                     placeholder="YY"
                     class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30"
                   />
@@ -194,6 +200,7 @@
                     inputmode="numeric"
                     pattern="[0-9]*"
                     name="CVC"
+                    id="CVC"
                     placeholder="e.g. 123"
                     class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30"
                   />
