@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Screenshot
 
-![https://imgur.com/vOaieyN]()
+![Screenshot](./design/desktop-design.jpg)
 
 ### Links
 
