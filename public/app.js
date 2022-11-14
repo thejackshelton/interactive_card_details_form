@@ -95,6 +95,14 @@ expirationMonth.addEventListener("keyup", (e) => {
       expiration.innerText =
         expiration.innerText.substring(0, 2).slice(0, -1) + "/" + keepYear;
     }
+
+    if (e.target.value > 12) {
+      expirationError.classList.add("text-heading_xs");
+      expirationErrorMessage.innerText = "Must be a valid date";
+      expirationError.appendChild(expirationErrorMessage);
+    } else {
+      expirationErrorMessage.innerText = "Can't be blank";
+    }
   }
 
   if (e.target.value.length >= 2) {
@@ -119,6 +127,14 @@ expirationYear.addEventListener("keyup", (e) => {
       expiration.innerText.substring(0, 2) + "/" + e.target.value;
     if (expirationError.contains(expirationErrorMessage)) {
       expirationError.removeChild(expirationErrorMessage);
+    }
+
+    if ((e.target.value > 10 && e.target.value < 22) || e.target.value > 30) {
+      expirationError.classList.add("text-heading_xs");
+      expirationErrorMessage.innerText = "Must be a valid date";
+      expirationError.appendChild(expirationErrorMessage);
+    } else {
+      expirationErrorMessage.innerText = "Can't be blank";
     }
 
     if (!e.target.value.match(/^[\d ]*$/)) {
