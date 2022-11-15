@@ -466,6 +466,17 @@ video {
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
 .invisible {
   visibility: hidden;
 }
@@ -708,6 +719,16 @@ video {
 .inline-size {
     inline-size: 150px;
   }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
 
 .placeholder\:text-veryDarkViolet\/30::-moz-placeholder {
   color: hsl(278 68% 11% / 0.3);
@@ -776,10 +797,6 @@ video {
     margin-top: 2rem;
   }
 
-  .desktop\:ml-\[5rem\] {
-    margin-left: 5rem;
-  }
-
   .desktop\:ml-\[10px\] {
     margin-left: 10px;
   }
@@ -790,10 +807,6 @@ video {
 
   .desktop\:mt-0 {
     margin-top: 0px;
-  }
-
-  .desktop\:mr-\[5rem\] {
-    margin-right: 5rem;
   }
 
   .desktop\:block {

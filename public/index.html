@@ -145,8 +145,10 @@
                   <div
                     class="relative mt-5 tracking-body_md_spacing text-body_md"
                   >
-                    EXP. DATE (MM/YY)
-                    <label class="flex my-2">
+                    <fieldset class="flex">
+                      <legend class="my-2">EXP. DATE (MM/YY)</legend>
+
+                      <label for="month" class="sr-only">Month</label>
                       <input
                         required
                         data-expiration-month
@@ -159,6 +161,8 @@
                         placeholder="MM"
                         class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 max-w-[72px] desktop:max-w-[80px]"
                       />
+
+                      <label for="year" class="sr-only">Year</label>
                       <input
                         required
                         data-expiration-year
@@ -171,7 +175,7 @@
                         placeholder="YY"
                         class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 max-w-[72px] ml-2 desktop:max-w-[80px] desktop:ml-[10px]"
                       />
-                    </label>
+                    </fieldset>
                   </div>
                   <span
                     id="expiration-error"
