@@ -44,10 +44,10 @@
             class="flex flex-col desktop:w-[483px] desktop:flex-col-reverse desktop:justify-center"
           >
             <div
-              class="relative z-10 flex left-16 top-5 desktop:top-0 desktop:justify-start desktop:left-[15rem]"
+              class="relative z-10 flex w-full mobile:left-16 top-5 desktop:top-0 desktop:justify-start desktop:left-[15rem]"
             >
               <div
-                class="max-w-[286px] desktop:max-w-[447px] desktop:shadow-cardshadow desktop:rounded-xl"
+                class="max-w-[286px] mobile:max-w-[286px] desktop:max-w-[447px] desktop:shadow-cardshadow desktop:rounded-xl"
               >
                 <img src="./images/bg-card-back.png" alt="back of the card" />
               </div>
@@ -115,7 +115,7 @@
                 name="card-name"
                 id="card-name"
                 placeholder="e.g. Jane Appleseed"
-                class="px-3 py-2 border rounded-lg border-lightGrayishViolet focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 w-[327px] desktop:w-[381px] h-[45px]"
+                class="px-3 py-2 border rounded-lg border-lightGrayishViolet focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 w-full mobile:w-[327px] desktop:w-[381px] h-[45px]"
               />
 
               <label
@@ -131,7 +131,7 @@
                 name="card-number"
                 id="card-number"
                 placeholder="e.g. 1234 5678 9123 0000"
-                class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 w-[327px] desktop:w-[381px]"
+                class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 w-full mobile:w-[327px] desktop:w-[381px]"
               />
 
               <span
@@ -159,7 +159,7 @@
                         name="month"
                         id="month"
                         placeholder="MM"
-                        class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 max-w-[72px] desktop:max-w-[80px]"
+                        class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 w-full mobile:max-w-[72px] desktop:max-w-[80px]"
                       />
 
                       <label for="year" class="sr-only">Year</label>
@@ -173,7 +173,7 @@
                         name="year"
                         id="year"
                         placeholder="YY"
-                        class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 max-w-[72px] ml-2 desktop:max-w-[80px] desktop:ml-[10px]"
+                        class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 w-full mobile:max-w-[72px] ml-2 desktop:max-w-[80px] desktop:ml-[10px]"
                       />
                     </fieldset>
                   </div>
@@ -200,7 +200,7 @@
                     name="CVC"
                     id="CVC"
                     placeholder="e.g. 123"
-                    class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 max-w-[164px] desktop:max-w-[191px]"
+                    class="px-3 py-2 border rounded-lg border-lightGrayishViolet text-heading_lg focus:input-border-gradient focus:border outline-0 focus:outline-none caret-gradientOne placeholder:text-veryDarkViolet/30 w-full mobile:max-w-[164px] desktop:max-w-[191px]"
                   />
                   <span
                     id="cvc-error"
@@ -212,7 +212,7 @@
               <input
                 type="submit"
                 value="Confirm"
-                class="py-3 text-white rounded-lg my-7 bg-veryDarkViolet text-heading_lg w-[327px] desktop:w-[381px]"
+                class="py-3 text-white rounded-lg my-7 bg-veryDarkViolet text-heading_lg w-full mobile:w-[327px] desktop:w-[381px]"
               />
             </form>
             <!-- Completed state -->

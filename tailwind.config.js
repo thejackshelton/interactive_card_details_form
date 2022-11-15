@@ -3,7 +3,7 @@ module.exports = {
   content: ["./public/**/*.{html, js}"],
   theme: {
     screens: {
-      tablet: "375px",
+      mobile: "375px",
       desktop: "1440px",
     },
     fontFamily: {
