@@ -29,7 +29,7 @@ nameInput.addEventListener("keyup", (e) => {
   name.innerText = e.target.value.toUpperCase();
 
   if (e.target.value === "") {
-    name.innerText = "JANE APPLESEED";
+    name.innerText = "Jane Appleseed";
   }
 
   if (e.target.value.length > 30) {
@@ -194,7 +194,7 @@ restartButton.addEventListener("click", () => {
 
   //Form Reset
   form.reset();
-  name.innerText = "JANE APPLESEED";
+  name.innerText = "Jane Appleseed";
   cardinfo.innerText = "0000 0000 0000 0000";
   expiration.innerText = "00/00";
   cvc.innerText = "000";
